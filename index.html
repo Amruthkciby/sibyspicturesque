@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Background Image Example</title>
+  <title>Background with Centered Image</title>
   <style>
     html, body {
       height: 100%;
@@ -11,14 +11,26 @@
     }
 
     body {
-      background-image: url('1.png');
-      background-size: cover; /* prevents cropping */
+      background-image: url('1.png'); /* background image */
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center top;
-      background-color: #000; /* fallback background */
+      background-color: #000;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img.foreground {
+      max-width: 60%; /* smaller size */
+      height: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+  <img src="2.jpg" alt="Centered Foreground" class="foreground" />
 </body>
 </html>
