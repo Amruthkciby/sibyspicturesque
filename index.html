@@ -16,10 +16,46 @@
       background-repeat: no-repeat;
       background-position: center top;
       background-color: #000;
-
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    /* Navigation bar styles */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+      backdrop-filter: blur(5px); /* Optional blur effect for modern browsers */
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff; /* White text color */
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ccc; /* Light gray on hover for feedback */
     }
 
     img.foreground {
@@ -27,14 +63,26 @@
       height: auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       border-radius: 12px;
-      margin-top: 80px;
+      margin-top: 100px; /* Adjusted to account for nav bar height */
     }
 
     /* Mobile devices (max-width: 768px) */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 800px) {
       img.foreground {
         max-width: 80%; /* Larger relative size for mobile */
-        margin-top: 40px; /* Reduced margin for smaller screens */
+        margin-top: 80px; /* Adjusted for nav bar */
+      }
+
+      nav ul {
+        flex-direction: column; /* Stack items vertically on mobile */
+      }
+
+      nav ul li {
+        margin: 10px 0; /* Reduced spacing for mobile */
+      }
+
+      nav ul li a {
+        font-size: 16px; /* Slightly smaller font for mobile */
       }
     }
 
@@ -42,12 +90,24 @@
     @media screen and (max-width: 480px) {
       img.foreground {
         max-width: 90%; /* Even larger for very small screens */
-        margin-top: 20px; /* Further reduced margin */
+        margin-top: 60px; /* Further adjusted for nav bar */
+      }
+
+      nav ul li a {
+        font-size: 14px; /* Smaller font for very small screens */
       }
     }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   <img src="2.jpg" alt="Centered Foreground" class="foreground" />
 </body>
 </html>
