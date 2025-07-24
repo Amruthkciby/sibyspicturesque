@@ -23,11 +23,27 @@
     }
 
     img.foreground {
-      max-width: 60%; /* smaller size */
+      max-width: 60%; /* Default for larger screens */
       height: auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       border-radius: 12px;
       margin-top: 80px;
+    }
+
+    /* Mobile devices (max-width: 768px) */
+    @media screen and (max-width: 768px) {
+      img.foreground {
+        max-width: 80%; /* Larger relative size for mobile */
+        margin-top: 40px; /* Reduced margin for smaller screens */
+      }
+    }
+
+    /* Smaller mobile devices (max-width: 480px) */
+    @media screen and (max-width: 480px) {
+      img.foreground {
+        max-width: 90%; /* Even larger for very small screens */
+        margin-top: 20px; /* Further reduced margin */
+      }
     }
   </style>
 </head>
