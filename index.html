@@ -20,6 +20,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column; /* Stack elements vertically */
     }
 
     /* Navigation bar styles */
@@ -61,7 +62,7 @@
 
     #menu-icon {
       display: none; /* Hidden by default */
-      color: #fff; /* White icon color */
+      color: #000; /* Black icon color */
       font-size: 24px;
       cursor: pointer;
       position: absolute;
@@ -69,12 +70,24 @@
       right: 20px;
     }
 
+    /* Text styles */
+    .header-text {
+      color: #fff; /* Default text color */
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 60px; /* Space below navbar */
+      margin-bottom: 20px; /* Space above foreground image */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Enhance readability */
+    }
+
     img.foreground {
       max-width: 60%; /* Default for larger screens */
       height: auto;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       border-radius: 12px;
-      margin-top: 100px; /* Adjusted to account for nav bar height */
+      margin-top: 20px; /* Reduced to account for header text */
     }
 
     /* Mobile devices (max-width: 768px) */
@@ -106,17 +119,29 @@
         font-size: 16px; /* Slightly smaller font for mobile */
       }
 
+      .header-text {
+        font-size: 20px; /* Smaller font for mobile */
+        margin-top: 50px; /* Adjusted for mobile */
+        margin-bottom: 15px;
+      }
+
       img.foreground {
         max-width: 80%; /* Larger relative size for mobile */
-        margin-top: 80px; /* Adjusted for nav bar */
+        margin-top: 15px; /* Adjusted for mobile */
       }
     }
 
     /* Smaller mobile devices (max-width: 480px) */
     @media screen and (max-width: 480px) {
+      .header-text {
+        font-size: 18px; /* Smaller font for very small screens */
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
       img.foreground {
         max-width: 90%; /* Even larger for very small screens */
-        margin-top: 60px; /* Further adjusted for nav bar */
+        margin-top: 10px; /* Further adjusted */
       }
 
       nav ul li a {
@@ -135,6 +160,8 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+  <!-- Text with inline style options for color and position -->
+  <h1 class="header-text" style="color: #fff; margin-top: 60px;">Capturing the Memories</h1>
   <img src="2.jpg" alt="Centered Foreground" class="foreground" />
   <script>
     document.getElementById('menu-icon').addEventListener('click', function() {
